@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./unifySignUpForm.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+ * {
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+}
+*::-webkit-scrollbar {
+    display: none !important;
+}
+img {
+    width: 100%;
+    flex-shrink: 0 !important;
+}
+input:focus {
+    border: none;
+    outline: none;
+}
+main {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+}
+a {
+    text-decoration: none !important;
+}
+.pc {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+.signUpForm {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.bg-img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+overflow: hidden;
+}
+.gs-5 {
+    height: 5vh;
+    width: 100%;
+}
+.bg-img img {
+    width: 50%;
+}
+
+
+.form {
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+.signup-form {
+    height: 100%;
+    width: 100%;
+    scale: 0.8;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
+    border: 0.1vh solid transparent;
+border-radius: 2vw;
+display: flex;
+flex-direction: column;
+}
+.signup-form h1  {
+align-self: center;
+font-family: Arial, Helvetica, sans-serif;    
+}
+.row-signup {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    align-self: center;
+    justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+}
+.input-box {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3vh !important;
+}
+.input-box strong {
+    font-weight: 600;
+}
+.input-box input {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+height: 3vh;
+border: 0;
+border-bottom: 0.1vh solid black;
+}
+.row-signup:last-child input {
+    width: 100%;
+}
+.mid {
+    position: absolute;
+    right: 50%;
+    translate: 50% 0;
+}
+.input {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding-bottom: 3vh !important;
+}
+.input strong {
+    font-size: 1.7vw;
+    font-weight: 600;
+}
+.input input {
+    position: absolute;
+    bottom: 0%;
+height: 3vh;
+width: 100%;
+border: 0;
+border-bottom: 0.1vh solid black;
+}
+.how-you-heard {
+    position: relative;
+    border-bottom: 0.1vh solid black;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 2vh !important;
+    justify-content: space-between;
+
+}
+.how-you-heard i {
+    padding: 0 1vw !important;
+    cursor: pointer;
+
+}
+.heading-signup {
+    position: relative;
+    width: 100%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading-signup img {
+width: 8%;
+}
+.heading-signup h1 {
+    padding: 0vw 2vw!important;
+}
+.how-you-heard strong {
+}
+.nb-dropdown-menu {
+    position: absolute;
+height: fit-content;
+width: 100%;
+background-color: rgb(240, 240, 240);
+bottom: 100%;
+visibility: hidden;
+}
+.nb-dropdown-menu option:hover {
+    background-color: aliceblue;
+    cursor: pointer;
+}
+.safe {
+    font-size: 1vw;
+    font-weight: 400;
+    width: 80%;
+}
+.action-links {
+    height: fit-content;
+    width: 100%;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+}
+.action-links a {
+    background-color: rgb(2, 99, 184);
+    padding: 1vh 8vw !important; /* Adjusted padding to refine the button size */
+    border: none; /* Removed border for a cleaner look */
+    border-radius: 2vw; /* Rounded corners */
+    color: white;
+    text-decoration: none; /* Removes underline from links */
+    font-size: 1.2vw; /* Increases text size for better readability */
+    font-weight: bold; /* Makes the text bold */
+    display: inline-block; /* Ensures proper spacing between buttons */
+    text-align: center; /* Centers text within the buttons */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
+    margin: 0.5vh 1vw; /* Adds spacing between the buttons */
+  }
+  
+  .action-links a:hover {
+    background-color: rgb(22, 131, 225); /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+  
+  .action-links a:active {
+    background-color: rgb(20, 117, 201); /* Even darker blue when active */
+    transform: translateY(1px); /* Slight sink on active */
+  }
+  .action-links a:last-child {
+    background-color: rgb(19, 19, 19);
+  }
+/* tablet */
+@media screen and (min-width: 768px) { 
+    main {
+    }
+    .input-box strong {
+        padding-right: 5vw !important;
+        font-size: 1.7vw !important;
+    }
+    .input-box input {
+width: 100% !important;
+    }
+    .dob strong {
+        padding-right: 10vw !important;
+        font-size: 1.7vw !important;
+    }
+    .dob input {
+width: 100% !important;
+    }
+    .date-of-birth {
+        font-size: 1.4vw !important;
+    font-weight: 400;
+    }
+.nb-dropdown-menu option {
+    font-size: 1.2vw;
+} 
+.how-you-heard i {
+    font-size: 1.5vw;
+}
+}
+  
+  /* Styles for small to medium desktops (min-width: 1024px) */
+  @media screen and (min-width: 1024px) {
+main {
+background-color: white;
+}
+.date-of-birth {
+    font-size: 1.4vw !important;
+
+}
+.input-box strong  {
+    font-size: 1.5vw !important;
+padding-right: 7vw !important;
+}
+.input strong  {
+    font-size: 1.5vw !important;
+}
+.dob strong {
+    padding-right: 12vw !important;
+    font-size: 1.5vw !important;
+}
+.dob input {
+width: 100% !important;
+}
+
+  }
+  
+  /* Styles for large desktops (min-width: 1440px) */
+  @media screen and (min-width: 1440px) {
+    main {
+        background-color: white;
+    } 
+    .nb-dropdown-menu option {
+        font-size: 0.9vw;
+    } 
+    .how-you-heard i {
+        font-size: 1vw;
+    }
+    .date-of-birth {
+        font-size: 0.9vw !important;
+
+    }
+    .input-box strong  {
+        font-size: 1vw !important;
+   padding-right: 10vw !important;
+    }
+    .input strong  {
+        font-size: 1vw !important;
+    } 
+    .dob strong {
+        padding-right: 13vw !important;
+        font-size: 1vw !important;
+    }
+    .dob input {
+    width: 100% !important;
+    }
+    .safe {
+        font-size: 0.8vw;
+    }
+   
+}
+  
+  /* Styles for ultra-wide desktops (min-width: 1920px) */
+  @media screen and (min-width: 1920px) {
+    main {
+        background-color: white;
+    }
+    .input-box strong  {
+        font-size: 1vw !important;
+    }
+    .nb-dropdown-menu option {
+        font-size: 1vw;
+    } 
+    .input strong  {
+        font-size: 1vw !important;
+    } 
+    .dob strong {
+        padding-right: 13vw !important;
+        font-size: 1vw !important;
+    }
+    .dob input {
+    width: 100% !important;
+    }
+  }
+  
+  /* Styles for large 4K monitors (min-width: 2560px) */
+  @media screen and (min-width: 2560px) {
+  
+  }
+  
+  /* Styles for 5K and ultra-wide monitors (min-width: 3840px) */
+  @media screen and (min-width: 3840px) {
+   
+  }
+  div {
+    display: none;
+  }
+
+</style>
+</head>
+<body>
+
+ <main>
+<section class="pc">
+    <section class="signUpForm">
+
+        <section class="bg-img">
+            <section class="form">
+                <section class="signup-form">
+                    <section class="heading-signup">
+                        <img src="https://i.ibb.co/Ch1tDgy/final-Screenshot-2024-11-05-191413-transformed.jpg" alt="final-Screenshot-2024-11-05-191413-transformed" border="0">
+                        <h1 class="fs-1">Sign Up To Unify</h1>
+                    </section>
+                    <section class="gs-5"></section>
+            
+                    <section class="input">
+                        <strong>Email</strong>
+                        <input type="email" name="" id="">
+                    </section>
+                    <section class="gs-5"></section>
+                    <section class="input">
+                        <strong>Password</strong>
+                        <input type="password" name="" id="">
+                    </section>
+                    <section class="gs-5"></section>
+                    <section class="row-signup">
+                
+                        <section class="input-box">
+                            <strong class="fs-5">First Name</strong>
+                            <input type="text">
+                        </section>
+                        <section class="input-box mid">
+                            <strong class="fs-5">Middle Name</strong>
+                            <input type="text">
+                        </section>
+                        <section class="input-box">
+                            <strong class="fs-5">Last Name</strong>
+                            <input type="text">
+                        </section>
+
+                    </section>
+                    <section class="gs-5"></section>
+                    <section class="gs-5"></section>
+                    <h1  style="align-self: flex-start;" class=" pb-2 date-of-birth">Date Of Birth</h1>
+                    <section class="row-signup">
+                
+                        <section class="input-box dob">
+                            <strong class="fs-5">Day</strong>
+                            <input type="text">
+                        </section>
+                        <section class="input-box mid dob">
+                            <strong class="fs-5"> Month</strong>
+                            <input type="text">
+                        </section>
+                        <section class="input-box dob">
+                            <strong class="fs-5">Year</strong>
+                            <input type="text">
+                        </section>
+
+                    </section>
+                    <section class="gs-5"></section>
+                    <section id="how-you-heard" class="input how-you-heard" onclick="openDropUpMenu()">
+                        <strong>How did you heard about us?</strong>
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <section class="nb-dropdown-menu" id="nb-dropdown-menu">
+                            <option value="" class="p-1">Youtube</option>
+                            <option value="" class="p-1">Facebook</option>
+                            <option value="" class="p-1">Instagram</option>
+                            <option value="" class="p-1">X</option>
+                            <option value="" class="p-1">Other</option>
+                        </section>
+                    </section>
+                    <section class="gs-5"></section>
+                    <strong class="safe">Your email and password are safe and secure, ensuring that your personal
+                         information is protected from unauthorized access.</strong>
+                    <section class="action-links p-4">
+                        <a href="">Sign in</a>
+                        <a href="">Login</a>
+                    </section>
+                </section>
+            </section>
+
+            <img src="https://i.ibb.co/KKHFBQS/fotor-ai-2024110421922.jpg" alt="fotor-ai-2024110421922" border="0" onload="LoadsignUpForm()">
+        </section>
+    </section> 
+<!-- SignUpFormSectionEnd -->
+</section>
+</main>
+<script src="./unify.js"></script>
+<script>
+    
+
+
+    function LoadsignUpForm() {
+}
+function openDropUpMenu() {
+let dropdownMenu = document.getElementById("nb-dropdown-menu");
+let howYouHeard = document.getElementById("how-you-heard");
+dropdownMenu.style.visibility = "visible";
+howYouHeard.setAttribute("onclick", "closeDropUpMenu()");
+}
+function closeDropUpMenu() {
+let dropdownMenu = document.getElementById("nb-dropdown-menu");
+let howYouHeard = document.getElementById("how-you-heard");
+dropdownMenu.style.visibility = "hidden";
+howYouHeard.setAttribute("onclick", "openDropUpMenu()");
+}
+
+
+</script>
+</body>
+</html>
